@@ -1,0 +1,172 @@
+semilla_primigenia: 530797.0
+experimento: 63156.0
+dataset: gerencial_competencia_2025.csv.gz
+CA:
+  metodo: MachineLearning
+trainingstrategy:
+  validate: 202107.0
+  training:
+  - 202106.0
+  - 202105.0
+  - 202104.0
+  - 202103.0
+  - 202102.0
+  - 202101.0
+  - 202012.0
+  - 202011.0
+  - 202010.0
+  - 202009.0
+  - 202008.0
+  - 202007.0
+  - 202006.0
+  - 202005.0
+  training_pct: 1.0
+  positivos:
+  - BAJA+1
+  - BAJA+2
+  final_train:
+  - 202107.0
+  - 202106.0
+  - 202105.0
+  - 202104.0
+  - 202103.0
+  - 202102.0
+  - 202101.0
+  - 202012.0
+  - 202011.0
+  - 202010.0
+  - 202009.0
+  - 202008.0
+  - 202007.0
+  - 202006.0
+  - 202005.0
+  future: 202109.0
+hipeparametertuning:
+  num_interations: 60.0
+  hs:
+    pars:
+      num_leaves:
+        id: num_leaves
+        type: integer
+        len: 1
+        lower: 2
+        upper: 8192
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_data_in_leaf:
+        id: min_data_in_leaf
+        type: integer
+        len: 1
+        lower: 2
+        upper: 8192
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      lambda_l2:
+        id: lambda_l2
+        type: numeric
+        len: 1
+        lower: 0.0
+        upper: 1000
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      learning_rate:
+        id: learning_rate
+        type: numeric
+        len: 1
+        lower: 0.005
+        upper: 0.1
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      num_iterations:
+        id: num_iterations
+        type: integer
+        len: 1
+        lower: 100
+        upper: 5000
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      feature_fraction:
+        id: feature_fraction
+        type: numeric
+        len: 1
+        lower: 0.05
+        upper: 1
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+    forbidden: ~
+lgbm:
+  param_fijos:
+    objective: binary
+    metric: auc
+    first_metric_only: yes
+    boost_from_average: yes
+    feature_pre_filter: no
+    verbosity: -100.0
+    force_row_wise: yes
+    max_bin: 31.0
+    seed: 530797.0
+out:
+  lgbm:
+    mejores_hiperparametros:
+      num_leaves: 2583
+      min_data_in_leaf: 3
+      lambda_l2: 1.6265921
+      learning_rate: 0.0373501
+      num_iterations: 3625
+      feature_fraction: 0.0899416
+kaggle:
+  competencia: labo-i-2025-virtual-gerencial
+  cortes:
+  - 800.0
+  - 850.0
+  - 900.0
+  - 950.0
+  - 1000.0
+  - 1050.0
+  - 1100.0
+  - 1150.0
+  - 1200.0
+  - 1250.0
+  - 1300.0
